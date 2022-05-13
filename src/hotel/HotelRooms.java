@@ -1,6 +1,8 @@
 package hotel;
 
-import java.util.*;
+
+
+import static hotel.HotelRunner.scan;
 
 public class HotelRooms {
 
@@ -27,7 +29,7 @@ public class HotelRooms {
     }
 
     public static void chooseRoom(int i) {
-        int j, sayac = 0;
+        int j, rn = 0;
         HotelRooms capsuleTekOda[] = new HotelRooms[15];
         HotelRooms capsuleCiftOda[] = new HotelRooms[15];
         switch (i) {
@@ -37,7 +39,24 @@ public class HotelRooms {
                         System.out.println(k + " *");// uygun degil try kont et
                     }
                 }
+                System.out.print("\nOda Numaranızı Giriniz: ");
+                try {
+                    rn = scan.nextInt();
+                    rn--;
+                    if (capsuleTekOda[rn] != null)
+                        throw new UygunDegil();
+                    MusteriTercihi(i, rn);
+                } catch (UygunDegil e) {
+                    e.printStackTrace();
+                    return;
+                }
+                break;
+
+
         }
+    }
+
+    private static void MusteriTercihi(int i, int rn) {
     }
 
     // static HotelFeatures tekKişilikOda = new HotelFeatures("tekKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "gol", "tekYatak", 250);
