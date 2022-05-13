@@ -39,7 +39,7 @@ public class Cars {
                     cars.get(choose).getVites(), cars.get(choose).getMotorGucu(),
                     cars.get(choose).getYil(), cars.get(choose).getFiyat());
 
-            if( bakiye-cars.get(choose).getFiyat()<bakiye){
+            if( cars.get(choose).getFiyat()<bakiye){
 
                 bakiye=bakiye-cars.get(choose).getFiyat();
                 System.out.println("\nHAVE A NİCE DAY");

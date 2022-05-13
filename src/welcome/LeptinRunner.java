@@ -2,9 +2,11 @@ package welcome;
 
 import hotel.HotelRunner;
 import Car.RentalCarRunner;
+import tourist_oneDay.TouristRunner;
 
 public class LeptinRunner {
     public static int choose;
+    public static int bakiye=2000;
 
     public static void main(String[] args) {
 
@@ -17,6 +19,7 @@ public class LeptinRunner {
 
         //System.out.println("PLEASE ENTER PASPORT NO");
         //String pasportNo=TryCatch.rakamlistringGirisi();
+        System.out.println("PLEASE ENTER ");
 
         System.out.println("PLEASE CHOOSE HOTEL FROM\n" +
                 "1- HOSTEL      *\n" +
@@ -30,10 +33,10 @@ public class LeptinRunner {
                 HotelRunner.hotel();
                 break;
             case 2:
-                HotelRunner.hotel();
+               RentalCarRunner.rental();
                 break;
             case 3:
-                HotelRunner.hotel();
+                TouristRunner.tourist();
                 break;
             case 4:
                 HotelRunner.hotel();

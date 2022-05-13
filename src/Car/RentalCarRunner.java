@@ -38,11 +38,7 @@ public class RentalCarRunner {
             System.out.println("SEE YOU LATER");
         }
     }
-
     public static void menu() {
-
-
-
 
         switch (LeptinRunner.choose) {
 
