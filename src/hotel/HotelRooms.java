@@ -1,108 +1,145 @@
 package hotel;
 
 
-import java.util.Arrays;
-
-import static hotel.HotelRunner.scan;
-
 public class HotelRooms {
-    static String capsuleTekOda[] = new String[15];
-    static String capsuleCiftOda[] = new String[15];
-    private int odaNo;
-    private String odaTercih;
+
+    private String odaDurum="bos";
+    private String odaTuru;
     private String internet;
-    private String lcd;
+    private String tv;
     private String kuvetBanyoJakuzi;
     private String manzara;
     private String yatakOlcut;
-    private String $;
-
-    private double gunlukUcret;
-
+    private String minibar;
+    private int gunlukUcret;
 
     public HotelRooms() {
-
     }
 
-    public HotelRooms(int odaNo, String odaTercih, double gunlukUcret) {
-        this.odaNo = odaNo;
-        this.odaTercih = odaTercih;
+    public HotelRooms(String odaTuru) {
+        this.odaTuru = odaTuru;
+    }
+
+    public HotelRooms(String odaDurum,String odaTuru, String internet, String tv, String kuvetBanyoJakuzi, String manzara, String yatakOlcut, String minibar, int gunlukUcret) {
+        this.odaDurum = odaDurum;
+        this.odaTuru = odaTuru;
+        this.internet = internet;
+        this.tv = tv;
+        this.kuvetBanyoJakuzi = kuvetBanyoJakuzi;
+        this.manzara = manzara;
+        this.yatakOlcut = yatakOlcut;
+        this.minibar = minibar;
         this.gunlukUcret = gunlukUcret;
     }
 
-    public static void chooseRoom(int i) {
-        int j, rn;
-        System.out.println(Arrays.toString(capsuleTekOda));
-        switch (i) {
-            case 1:
-                for (int k = 0; k < 15; k++) {
-                    if (capsuleTekOda[k] == null) {
-                        System.out.print(k + 1 + " * ");// uygun degil try kont et
-                    }
-                }
-                System.out.println();
-                for (int k = 0; k < 15; k++) {
-                    if (capsuleTekOda[k] != null) {
-                        System.out.print(k + 1 + " dolu");// uygun degil try kont et
-                    }
-                }
-
-                System.out.print("\nOda Numaranızı Giriniz: ");
-                try {
-                    rn = scan.nextInt();
-                    rn--;
-                    if (capsuleTekOda[rn] != null) {
-                        throw new UygunDegil();
-                        // MusteriTercihi(i, rn);
-                    } else {
-                        capsuleTekOda[rn] = "dolu";
-                    }
-                } catch (UygunDegil e) {
-                    e.printStackTrace();
-                    return;
-                }
-                break;
-            case 2 : for (int k = 0; k < capsuleCiftOda.length; k++) {
-                if (capsuleCiftOda[k] == null) {
-                    System.out.print(k + 1 + " * ");// uygun degil try kont et
-                }
-            }
-                System.out.println();
-                for (int k = 0; k < capsuleCiftOda.length; k++) {
-                    if (capsuleCiftOda[k] != null) {
-                        System.out.print(k + 1 + " dolu");// uygun degil try kont et
-                    }
-                }
-                System.out.print("\nOda Numaranızı Giriniz: ");
-                try {
-                    rn = scan.nextInt();
-                    rn--;
-                    if (capsuleCiftOda[rn] != null) {
-                        throw new UygunDegil();
-                        // MusteriTercihi(i, rn);
-                    } else {
-                        capsuleCiftOda[rn] = "dolu";
-                    }
-                } catch (UygunDegil e) {
-                    e.printStackTrace();
-                    return;
-                }
-                break;
-
-        }
+    public String getOdaDurum() {
+        return odaDurum;
     }
 
-    private static void MusteriTercihi(int i, int rn) {
+    public void setOdaDurum(String odaDurum) {
+        this.odaDurum = odaDurum;
     }
 
-    // static HotelFeatures tekKişilikOda = new HotelFeatures("tekKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "gol", "tekYatak", 250);
-    // static HotelRooms ciftKişilikOda = new HotelRooms("ciftKişilikOda", "fibernet", "plazma", "kuvetBanyoJakuzi", "dag", "ciftYatak", 400);
-    // static HotelRooms dörtKişilikOda = new HotelRooms("dörtKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 850);
-    // static HotelRooms suitOda = new HotelRooms("suitOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 1000);
-    // static HotelRooms aileOdası = new HotelRooms("aileOdası", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 1500);
-    // static HotelRooms kralDairesi = new HotelRooms("kralDairesi", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 2500);
+    public String getOdaTuru() {
+        return odaTuru;
+    }
 
-    // static List<HotelRooms> odaTalepListesi = new ArrayList<>(Arrays.asList(tekKişilikOda,ciftKişilikOda,dörtKişilikOda,suitOda,aileOdası,kralDairesi));
+    public void setOdaTuru(String odaTuru) {
+        this.odaTuru = odaTuru;
+    }
 
-    // static Map<Integer, String > musteriOdaBilgisi = new TreeMap<>();
+    public String getInternet() {
+        return internet;
+    }
+
+    public void setInternet(String internet) {
+        this.internet = internet;
+    }
+
+    public String getTv() {
+        return tv;
+    }
+
+    public void setTv(String tv) {
+        this.tv = tv;
+    }
+
+    public String getKuvetBanyoJakuzi() {
+        return kuvetBanyoJakuzi;
+    }
+
+    public void setKuvetBanyoJakuzi(String kuvetBanyoJakuzi) {
+        this.kuvetBanyoJakuzi = kuvetBanyoJakuzi;
+    }
+
+    public String getManzara() {
+        return manzara;
+    }
+
+    public void setManzara(String manzara) {
+        this.manzara = manzara;
+    }
+
+    public String getYatakOlcut() {
+        return yatakOlcut;
+    }
+
+    public void setYatakOlcut(String yatakOlcut) {
+        this.yatakOlcut = yatakOlcut;
+    }
+
+    public String getMinibar() {
+        return minibar;
+    }
+
+    public void setMinibar(String minibar) {
+        this.minibar = minibar;
+    }
+
+    public int getGunlukUcret() {
+        return gunlukUcret;
+    }
+
+    public void setGunlukUcret(int gunlukUcret) {
+        this.gunlukUcret = gunlukUcret;
+    }
+
+    @Override
+    public String toString() {
+        return "HotelRooms{" +
+                "odaTuru='" + odaTuru + '\'' +
+                ", internet='" + internet + '\'' +
+                ", tv='" + tv + '\'' +
+                ", banyo='" + kuvetBanyoJakuzi + '\'' +
+                ", manzara='" + manzara + '\'' +
+                ", yatakOlcut='" + yatakOlcut + '\'' +
+                ", minibar='" + minibar + '\'' +
+                ", gunlukUcret=" + gunlukUcret +
+                '}';
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// static HotelFeatures tekKişilikOda = new HotelFeatures("tekKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "gol", "tekYatak", 250);
+// static HotelRooms ciftKişilikOda = new HotelRooms("ciftKişilikOda", "fibernet", "plazma", "kuvetBanyoJakuzi", "dag", "ciftYatak", 400);
+// static HotelRooms dörtKişilikOda = new HotelRooms("dörtKişilikOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 850);
+// static HotelRooms suitOda = new HotelRooms("suitOda", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 1000);
+// static HotelRooms aileOdası = new HotelRooms("aileOdası", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 1500);
+// static HotelRooms kralDairesi = new HotelRooms("kralDairesi", "internet", "lcd", "kuvetBanyoJakuzi", "manzara", "yatakOlcut", 2500);
+
+// static List<HotelRooms> odaTalepListesi = new ArrayList<>(Arrays.asList(tekKişilikOda,ciftKişilikOda,dörtKişilikOda,suitOda,aileOdası,kralDairesi));
+
+// static Map<Integer, String > musteriOdaBilgisi = new TreeMap<>();
+

@@ -7,7 +7,7 @@ import Car.RentalCarRunner;
 public class LeptinRunner {
     public static int choose;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
 

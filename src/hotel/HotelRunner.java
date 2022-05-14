@@ -4,15 +4,20 @@ import welcome.LeptinRunner;
 
 import java.util.Scanner;
 
-public class HotelRunner {
-    static Scanner scan = new Scanner(System.in);
+import static Car.RentalCarRunner.rental;
+import static hotel.FiveStarsHotel.*;
+import static tourist_oneDay.TouristRunner.tourist;
 
-    public static void hotel() {
+
+public class HotelRunner extends HotelRooms{
+    static long toplamGun;
+    static Scanner scan = new Scanner(System.in);
+    static HotelRooms obj = new HotelRooms("kral daiesi");
+
+    public static void hotel() throws InterruptedException {
         switch (LeptinRunner.choose) {
 
             case 1:
-
-
                 birYildizliOtel();
                 break;
             case 2:
@@ -32,8 +37,81 @@ public class HotelRunner {
 
     }
 
-    private static void besYildizliOtel() {
+    private static void besYildizliOtel() throws InterruptedException {
+        System.out.println(" PELVINAS HOTELE HOSGELDINIZ \n odalarimiz asagidaki listeden secebilirsiniz");
+        System.out.println("1- odasecimi\n" +
+                "2- otelFaturaIslemleri\n" +
+                "3- odemeIslemleri\n" +
+                "4- otelDisHizmetler\n" +
+                "5- cikis");
+        int islem=scan.nextInt();
+        switch(islem){
+            case 1:
+                odasecimi();
+                besYildizliOtel();
+                break;
+            case 2:
+                otelFaturaIslemleri();
+                besYildizliOtel();
+                break;
+            case 3:
+                odemeIslemleri();
+                besYildizliOtel();
+                break;
+            case 4:
+                otelDisHizmetler();
+                besYildizliOtel();
+                break;
+            case 5:
+                cikis();
+            default:
+                odasecimi();
+
+        }
     }
+
+    private static void cikis() throws InterruptedException {
+        Thread.sleep(3000);
+        System.out.print("*");
+        Thread.sleep(3000);
+        System.out.print("**");
+        Thread.sleep(3000);
+        System.out.print("***\n gule gule ");
+
+    }
+
+    private static void otelDisHizmetler() {
+        System.out.println("otel hizmetlerimiz ");
+        System.out.println("1- arac kiralama\n" +
+                "2- cinema\n" +
+                "3- sehirTuru\n" +
+                "4- restourant ");
+        int secim=scan.nextInt();
+        switch(secim){
+            case 1:
+                rental();
+
+                break;
+            case 2:
+                tourist();
+
+                break;
+            case 3:
+                tourist();
+
+                break;
+            case 4:
+                tourist();
+                break;
+            case 5:
+
+                break;
+            default:
+        }
+
+
+    }
+
 
     private static void dortYildizliOtel() {
     }
@@ -48,16 +126,16 @@ public class HotelRunner {
         System.out.println("WELLCOME TO CAPSULE HOTEL");
         System.out.println("hosgeldiniz yapmak istediginiz islem nedir\n" +
                 //ilk classdan alinan ismi buraya getir ismiyle karsilariz musteriyi
-               // "1- rezervasyon tarihleri ilk class dan geitr
+                // "1- rezervasyon tarihleri ilk class dan geitr
                 "1- oda gosterimi\n" +
                 "2- oda rezervasyon\n" +
                 "3- fatura islem \n" +
                 "4- odeme islemleri\n" +
                 "0- cikis");
-        int sec =scan.nextInt();
-        switch(sec){
+        int sec = scan.nextInt();
+        switch (sec) {
             case 1:
-                showRoom();
+
                 break;
             case 2:
 
@@ -73,15 +151,8 @@ public class HotelRunner {
         }
     }
 
-    private static void showRoom() {
-        System.out.println("otelimiz sadece oda hizmeti vermektedir musait odalar ve fiyatlari listededir");
-
-        HotelRooms tekKişilikOda = new HotelRooms(1,"tekKişilikOda" ,5);//kac oda var 15
-        HotelRooms ciftKişilikOda = new HotelRooms(1,"ciftKişilikOda" ,10);// 15 oda var secilen bir daha secilmesin calis
 
 
-
-    }
 
 
 }
