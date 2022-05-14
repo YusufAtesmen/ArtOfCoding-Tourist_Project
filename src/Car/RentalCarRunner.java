@@ -22,8 +22,8 @@ public class RentalCarRunner {
                 System.out.println("YOUR AGE IS NOT SUITABLE FOR RENTİNG A CAR\nBUT WE'LL DO IT FOR $250 ");
                 String choose = TryCatch.stringGirisi();
                 if (choose.equalsIgnoreCase("yes")) {
-                    if (bakiye > 250) {
-                        bakiye = bakiye - 250;
+                    if (LeptinRunner.bakiye > 250) {
+                        LeptinRunner.bakiye  = LeptinRunner.bakiye - 250;
                         menu();
                     } else {
                         System.out.println("SEE YOU LATER");

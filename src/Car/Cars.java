@@ -1,10 +1,12 @@
 package Car;
 
+import welcome.LeptinRunner;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Cars {
-    static int bakiye=20000;
+
     static Map<Integer, Informations> cars = new HashMap<>();
 
     static void birYildizliOtel() {
@@ -39,9 +41,9 @@ public class Cars {
                     cars.get(choose).getVites(), cars.get(choose).getMotorGucu(),
                     cars.get(choose).getYil(), cars.get(choose).getFiyat());
 
-            if( cars.get(choose).getFiyat()<bakiye){
+            if( cars.get(choose).getFiyat()< LeptinRunner.bakiye){
 
-                bakiye=bakiye-cars.get(choose).getFiyat();
+                 LeptinRunner.bakiye= LeptinRunner.bakiye-cars.get(choose).getFiyat();
                 System.out.println("\nHAVE A NİCE DAY");
             }else {
                 System.out.println("YOU DON'T HAVE ENOUGH MONEY");
@@ -82,9 +84,9 @@ public class Cars {
                     cars.get(choose).getVites(), cars.get(choose).getMotorGucu(),
                     cars.get(choose).getYil(), cars.get(choose).getFiyat());
 
-            if( bakiye-cars.get(choose).getFiyat()<bakiye){
+            if( cars.get(choose).getFiyat()<LeptinRunner.bakiye){
 
-                bakiye=bakiye-cars.get(choose).getFiyat();
+                LeptinRunner.bakiye=LeptinRunner.bakiye-cars.get(choose).getFiyat();
                 System.out.println("\nHAVE A NİCE DAY");
             }else {
                 System.out.println("YOU DON'T HAVE ENOUGH MONEY");
@@ -102,6 +104,7 @@ public class Cars {
         cars.put(2, uccar2);
         cars.put(3, uccar3);
         cars.put(4, uccar4);
+
         System.out.println("         Brand         Model         Gear           Motor Power     Year    Price");
         System.out.println("------------------------------------------------------------------------------");
         for (Integer w : cars.keySet()) {
@@ -125,14 +128,13 @@ public class Cars {
                     cars.get(choose).getVites(), cars.get(choose).getMotorGucu(),
                     cars.get(choose).getYil(), cars.get(choose).getFiyat());
 
-            if( bakiye-cars.get(choose).getFiyat()<bakiye){
+            if( cars.get(choose).getFiyat()<LeptinRunner.bakiye){
 
-                bakiye=bakiye-cars.get(choose).getFiyat();
+                LeptinRunner.bakiye=LeptinRunner.bakiye-cars.get(choose).getFiyat();
                 System.out.println("\nHAVE A NİCE DAY");
             }else {
                 System.out.println("YOU DON'T HAVE ENOUGH MONEY");
             }
-
         }
     }
 
@@ -149,7 +151,6 @@ public class Cars {
         System.out.println("         Brand         Model         Gear           Motor Power     Year    Price");
         System.out.println("----------------------------------------------------------------------------------");
         for (Integer w : cars.keySet()) {
-
 
             System.out.printf("%-8d %-13s %-13s %-16s %-13s %-9d %-1d\n", w,
                     cars.get(w).getMarka(), cars.get(w).getModel(),
@@ -169,9 +170,9 @@ public class Cars {
                     cars.get(choose).getVites(), cars.get(choose).getMotorGucu(),
                     cars.get(choose).getYil(), cars.get(choose).getFiyat());
 
-            if( bakiye-cars.get(choose).getFiyat()<bakiye){
+            if( cars.get(choose).getFiyat()<LeptinRunner.bakiye){
 
-                bakiye=bakiye-cars.get(choose).getFiyat();
+                LeptinRunner.bakiye=LeptinRunner.bakiye-cars.get(choose).getFiyat();
                 System.out.println("\nHAVE A NİCE DAY");
             }else {
                 System.out.println("YOU DON'T HAVE ENOUGH MONEY");
