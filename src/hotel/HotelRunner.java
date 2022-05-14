@@ -74,10 +74,11 @@ public class HotelRunner {
     }
 
     private static void showRoom() {
-        System.out.println("otelimiz sadece oda hizmeti vermektedir musait odala ve fiyatlari listededir");
+        System.out.println("otelimiz sadece oda hizmeti vermektedir musait odalar ve fiyatlari listededir");
 
         HotelRooms tekKişilikOda = new HotelRooms(1,"tekKişilikOda" ,5);//kac oda var 15
         HotelRooms ciftKişilikOda = new HotelRooms(1,"ciftKişilikOda" ,10);// 15 oda var secilen bir daha secilmesin calis
+
 
 
     }

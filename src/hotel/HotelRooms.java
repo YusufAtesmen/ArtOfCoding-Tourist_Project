@@ -1,11 +1,13 @@
 package hotel;
 
 
+import java.util.Arrays;
 
 import static hotel.HotelRunner.scan;
 
 public class HotelRooms {
-
+    static String capsuleTekOda[] = new String[15];
+    static String capsuleCiftOda[] = new String[15];
     private int odaNo;
     private String odaTercih;
     private String internet;
@@ -29,29 +31,63 @@ public class HotelRooms {
     }
 
     public static void chooseRoom(int i) {
-        int j, rn = 0;
-        HotelRooms capsuleTekOda[] = new HotelRooms[15];
-        HotelRooms capsuleCiftOda[] = new HotelRooms[15];
+        int j, rn;
+        System.out.println(Arrays.toString(capsuleTekOda));
         switch (i) {
             case 1:
-                for (int k = 1; k < 16; k++) {
+                for (int k = 0; k < 15; k++) {
                     if (capsuleTekOda[k] == null) {
-                        System.out.println(k + " *");// uygun degil try kont et
+                        System.out.print(k + 1 + " * ");// uygun degil try kont et
+                    }
+                }
+                System.out.println();
+                for (int k = 0; k < 15; k++) {
+                    if (capsuleTekOda[k] != null) {
+                        System.out.print(k + 1 + " dolu");// uygun degil try kont et
+                    }
+                }
+
+                System.out.print("\nOda Numaranızı Giriniz: ");
+                try {
+                    rn = scan.nextInt();
+                    rn--;
+                    if (capsuleTekOda[rn] != null) {
+                        throw new UygunDegil();
+                        // MusteriTercihi(i, rn);
+                    } else {
+                        capsuleTekOda[rn] = "dolu";
+                    }
+                } catch (UygunDegil e) {
+                    e.printStackTrace();
+                    return;
+                }
+                break;
+            case 2 : for (int k = 0; k < capsuleCiftOda.length; k++) {
+                if (capsuleCiftOda[k] == null) {
+                    System.out.print(k + 1 + " * ");// uygun degil try kont et
+                }
+            }
+                System.out.println();
+                for (int k = 0; k < capsuleCiftOda.length; k++) {
+                    if (capsuleCiftOda[k] != null) {
+                        System.out.print(k + 1 + " dolu");// uygun degil try kont et
                     }
                 }
                 System.out.print("\nOda Numaranızı Giriniz: ");
                 try {
                     rn = scan.nextInt();
                     rn--;
-                    if (capsuleTekOda[rn] != null)
+                    if (capsuleCiftOda[rn] != null) {
                         throw new UygunDegil();
-                    MusteriTercihi(i, rn);
+                        // MusteriTercihi(i, rn);
+                    } else {
+                        capsuleCiftOda[rn] = "dolu";
+                    }
                 } catch (UygunDegil e) {
                     e.printStackTrace();
                     return;
                 }
                 break;
-
 
         }
     }
