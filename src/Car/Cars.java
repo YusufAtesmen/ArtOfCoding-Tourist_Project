@@ -22,7 +22,6 @@ public class Cars {
         System.out.println("------------------------------------------------------------------------------");
         for (Integer w : cars.keySet()) {
 
-
             System.out.printf("%-8d %-13s %-13s %-16s %-13s %-9d %-1d\n", w,
                     cars.get(w).getMarka(), cars.get(w).getModel(),
                     cars.get(w).getVites(), cars.get(w).getMotorGucu(),
