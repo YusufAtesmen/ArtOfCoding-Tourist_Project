@@ -36,6 +36,7 @@ public class FiveStarsHotel {
 
         if (otel.containsKey(choose)) {
             otel.get(choose).setOdaDurum("dolu");
+
         }
         for (Integer w : otel.keySet()) {
 
@@ -108,14 +109,15 @@ public class FiveStarsHotel {
             do {
                 System.out.println("kart no son dort hane  giriniz ");
                 try {
-                    String kartNo = scan.next();
+                    String kartNo = scan.next().replaceAll("\\D","");
                     if (kartNo.length() == 4) {
                         System.out.println("sifre gir");
                         flag=false;
                         try {
                             int sifre = scan.nextInt();
                             if ((sifreler.stream().anyMatch(t -> t.equals(sifre)))) {//sifreyi bankadan cek static sifreler tanimla list te ordan cek lambda match ile
-                                System.out.println("sifre kabul edildi odeme tamam odaniza gidebilrsiniz");
+                                System.out.println("sifre kabul edildi odeme tamam yine bekleriz");
+                                flag=false;
                             } else throw new InputMismatchException("yanlis sifre");
                         } catch (InputMismatchException e) {
                             System.out.println(e.getMessage());
