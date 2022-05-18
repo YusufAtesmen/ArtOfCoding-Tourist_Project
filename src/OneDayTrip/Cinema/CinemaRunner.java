@@ -2,9 +2,12 @@ package OneDayTrip.Cinema;
 
 import OneDayTrip.Restaurant.IMenu;
 
-public class CinemaRunner implements IMenu {
+import static OneDayTrip.Restaurant.RestaurantRunner.lMenu;
 
-    public CinemaRunner() {
+public class CinemaRunner implements IMenu {
+    public static void main(String[] args) {
+        CinemaRunner cine = new CinemaRunner();
+        lMenu(cine);
     }
 
     @Override
