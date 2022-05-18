@@ -7,6 +7,7 @@
 4->Muze
 5->Hamamı
 
-**      "boğazTur", "Muze" ve "Hamam" -----> bu classlar "Abstract_Etkinlik classından türetildi.
+**      "boğazTur", "Muze" ve "Hamam" -----> bu class'lar "Abstract_Etkinlik" class'ından türetildi.
+        cinema için "CinemaRunner" class'ını, restaurant için RestauranRunner class'ı çağırılacak.
 
-**      yukardaki 5 etkinliğin hepsi birbirlerinden bağımsız çalışıyor.
+**      yukardaki 5 etkinliğin hepsi birbirlerinden bağımsız çalışıyor. Ayrı ayrı Call edilmeli..

@@ -16,26 +16,26 @@ public class IslemYap {
     public static Integer id;
 
     //!!!!!!!!!!!!!!!!!!!!!
-    public static void SecımYap(IMenu ymk, IMenu ick, IMenu cine) {
-        System.out.println("");
-        System.out.println("=======================================================");
-        System.out.println("****   Lütfen Yapmak Istediğiniz Işlemi Seçiniz   *****");
-        System.out.println("=======================================================");
-        System.out.println("\n1- Restaurant\n2- Sinema\n");
-
-        String ıslem = scan.next();
-        switch (ıslem) {
-            case "1":
-                lMenu(ymk);
-                lMenu(ick);
-                break;
-            case "2":
-                lMenu(cine);
-                break;
-            default:
-                System.out.println("");
-        }
-    }
+//    public static void SecımYap(IMenu ymk, IMenu ick, IMenu cine) {
+//        System.out.println("");
+//        System.out.println("=======================================================");
+//        System.out.println("****   Lütfen Yapmak Istediğiniz Işlemi Seçiniz   *****");
+//        System.out.println("=======================================================");
+//        System.out.println("\n1- Restaurant\n2- Sinema\n");
+//
+//        String ıslem = scan.next();
+//        switch (ıslem) {
+//            case "1":
+//                lMenu(ymk);
+//                lMenu(ick);
+//                break;
+//            case "2":
+//                lMenu(cine);
+//                break;
+//            default:
+//                System.out.println("");
+//        }
+//    }
 
 
     public static void HesapIste() {
