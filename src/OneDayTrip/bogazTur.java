@@ -1,42 +1,8 @@
-import OneDayTrip.Hamam;
+package OneDayTrip;
 
-import java.util.Scanner;
-
-public class bogazTur {
-    static int bogazBilet = 0;
-    static Scanner scan = new Scanner(System.in);
-
+public class bogazTur extends Abstract_Etkinlik {
     public static void main(String[] args) {
-        welcome();
-
+        welcome("\n1-Boğaz Turu - 200TL\n2-Fasıl - 125TL\n3-Yemek menü(balık) - 150TL\n4-Cıkış", "BOĞAZ TURUNA HOŞGELDİNİZ" ,200, 125, 150) ;
     }
 
-    private static void welcome() {
-        System.out.println("");
-        System.out.println("=======================================================");
-        System.out.println("****   Lütfen Yapmak Istediğiniz Işlemi Seçiniz   *****");
-        System.out.println("=======================================================");
-        System.out.println("\n1-Boğaz turu-200TL\n2-Fasıl-125TL\n3-Yemek menü(balık)-150TL\n4-Cıkış");
-        switch (scan.nextInt()) {
-
-
-            case 1:
-                bogazBilet += 200;
-                welcome();
-                break;
-            case 2:
-
-                bogazBilet += 125;
-                welcome();
-                break;
-            case 3:
-                bogazBilet += 150;
-                welcome();
-                break;
-            case 4:
-                Hamam.hesapla(bogazBilet);
-                break;
-
-        }
-    }
 }
