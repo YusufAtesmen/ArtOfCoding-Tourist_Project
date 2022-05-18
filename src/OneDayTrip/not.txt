@@ -1,0 +1,12 @@
+5 etkinlik var :
+
+
+1->Cinema
+2->Restaurant
+3->Boğaz Turu
+4->Muze
+5->Hamamı
+
+**      "boğazTur", "Muze" ve "Hamam" -----> bu classlar "Abstract_Etkinlik classından türetildi.
+
+**      yukardaki 5 etkinliğin hepsi birbirlerinden bağımsız çalışıyor.
