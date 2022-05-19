@@ -1,16 +1,10 @@
 package hotel;
-
 import Car.RentalCarRunner;
 import tourist_oneDay.TouristRunner;
 import welcome.LeptinRunner;
-
 import java.util.Scanner;
-
-import static Car.RentalCarRunner.rental;
 import static hotel.CreateRoom.rooms;
 import static hotel.FiveStarsHotel.*;
-import static tourist_oneDay.TouristRunner.tourist;
-
 
 public class HotelRunner extends HotelRooms{
     static long toplamGun;
