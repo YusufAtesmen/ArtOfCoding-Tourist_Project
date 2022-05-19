@@ -6,7 +6,7 @@ import tourist_oneDay.TouristRunner;
 
 public class LeptinRunner {
     public static int choose;
-    public static int bakiye=2000;
+    public static int bakiye=100000;
 
     public static void main(String[] args) {
 
@@ -39,10 +39,10 @@ public class LeptinRunner {
                 TouristRunner.tourist();
                 break;
             case 4:
-                HotelRunner.hotel();
+                TouristRunner.tourist();
                 break;
             case 5:
-                HotelRunner.hotel();
+                TouristRunner.tourist();
                 break;
                 default:
 
