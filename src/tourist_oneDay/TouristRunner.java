@@ -35,8 +35,8 @@ public class TouristRunner {
     private static void ucYildizliOtel() {
 
         boolean flag = true;
-        LocalTime tarihSaat = LocalTime.of(10, 0);
-        System.out.println("Hour : "+tarihSaat);
+
+        System.out.println("Hour : "+LeptinRunner.tarihSaat);
         while (flag) {
 
 
@@ -52,7 +52,7 @@ public class TouristRunner {
             gez3.put(5, obj5);
             System.out.println("   Activity            Price");
             System.out.println("-----------------------------");
-            if (tarihSaat.getHour()>16.59){
+            if (LeptinRunner.tarihSaat.getHour()>16.59){
                 obj1.setEtkinlik("Müze (Close)");
             }
             for (Integer w : gez3.keySet()) {
@@ -65,12 +65,12 @@ public class TouristRunner {
                 System.out.println("Activity off\nPlease select a activity from the list  ");
                 continue;
             }
-            if (tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0).getHour() >= 22 ||
-                    tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0).getHour()<=09.59) {
+            if (LeptinRunner.tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0).getHour() >= 22 ||
+                    LeptinRunner.tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0).getHour()<=09.59) {
                 System.out.println("You chose ");
                 System.out.println(gez3.get(choose).getEtkinlik());
-                tarihSaat=  tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0);
-                System.out.println(tarihSaat);
+                LeptinRunner.tarihSaat=  LeptinRunner.tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0);
+                System.out.println(LeptinRunner.tarihSaat);
                 LeptinRunner.bakiye = LeptinRunner.bakiye - gez3.get(choose).getFiyat();
                 System.out.println(LeptinRunner.bakiye);
                 flag = false;
@@ -81,8 +81,8 @@ public class TouristRunner {
                 System.out.println(gez3.get(choose).getEtkinlik());
 
                 if (gez3.get(choose).getFiyat() <= LeptinRunner.bakiye) {
-                    tarihSaat=  tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0);
-                    System.out.println(tarihSaat);
+                    LeptinRunner.tarihSaat=  LeptinRunner.tarihSaat.plusHours(gez3.get(choose).getTime()).plusMinutes(0);
+                    System.out.println(LeptinRunner.tarihSaat);
                     LeptinRunner.bakiye = LeptinRunner.bakiye - gez3.get(choose).getFiyat();
                     System.out.println(LeptinRunner.bakiye);
                 } else {
@@ -97,8 +97,8 @@ public class TouristRunner {
     private static void dortYildizliOtel() {
 
         boolean flag = true;
-        LocalTime tarihSaat = LocalTime.of(10, 0);
-        System.out.println("Hour : "+tarihSaat);
+
+        System.out.println("Hour : "+LeptinRunner.tarihSaat);
         while (flag) {
 
 
@@ -116,10 +116,10 @@ public class TouristRunner {
             gez4.put(6, obj6);
             System.out.println("   Activity            Price");
             System.out.println("-----------------------------");
-            if (tarihSaat.getHour()>16.59){
+            if (LeptinRunner.tarihSaat.getHour()>16.59){
                 obj1.setEtkinlik("Müze (Close)");
             }
-            if (tarihSaat.getHour()>11.59){
+            if (LeptinRunner.tarihSaat.getHour()>11.59){
                 obj6.setEtkinlik("Şehir Turu (Close)");
             }
             for (Integer w : gez4.keySet()) {
@@ -132,12 +132,12 @@ public class TouristRunner {
                 System.out.println("Activity off\nPlease select a activity from the list  ");
                 continue;
             }
-            if (tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0).getHour() >= 22 ||
-                    tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0).getHour()<=09.59) {
+            if (LeptinRunner.tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0).getHour() >= 22 ||
+                    LeptinRunner.tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0).getHour()<=09.59) {
                 System.out.println("You chose ");
                 System.out.println(gez4.get(choose).getEtkinlik());
-                tarihSaat=  tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0);
-                System.out.println(tarihSaat);
+                LeptinRunner.tarihSaat=  LeptinRunner.tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0);
+                System.out.println(LeptinRunner.tarihSaat);
                 LeptinRunner.bakiye = LeptinRunner.bakiye - gez4.get(choose).getFiyat();
                 System.out.println(LeptinRunner.bakiye);
                 flag = false;
@@ -150,8 +150,8 @@ public class TouristRunner {
 
 
                 if (gez4.get(choose).getFiyat() <= LeptinRunner.bakiye) {
-                    tarihSaat=  tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0);
-                    System.out.println(tarihSaat);
+                    LeptinRunner.tarihSaat=  LeptinRunner.tarihSaat.plusHours(gez4.get(choose).getTime()).plusMinutes(0);
+                    System.out.println(LeptinRunner.tarihSaat);
                     LeptinRunner.bakiye = LeptinRunner.bakiye - gez4.get(choose).getFiyat();
                     System.out.println(LeptinRunner.bakiye);
                 } else {
@@ -167,8 +167,8 @@ public class TouristRunner {
     private static void besYildizliOtel() {
 
         boolean flag = true;
-        LocalTime tarihSaat = LocalTime.of(10, 0);
-        System.out.println("Hour : "+tarihSaat);
+
+        System.out.println("Hour : "+LeptinRunner.tarihSaat);
         while (flag) {
 
 
@@ -188,11 +188,11 @@ public class TouristRunner {
             gez5.put(7, obj7);
             System.out.println("   Activity            Price");
             System.out.println("-----------------------------");
-            if (tarihSaat.getHour()>16.59){
+            if (LeptinRunner.tarihSaat.getHour()>16.59){
                 obj1.setEtkinlik("Müze (Close)");
                 obj7.setEtkinlik("Sıra Gecesi");
             }
-            if (tarihSaat.getHour()>11.59){
+            if (LeptinRunner.tarihSaat.getHour()>11.59){
                 obj6.setEtkinlik("Şehir Turu (Close)");
             }
             for (Integer w : gez5.keySet()) {
@@ -207,28 +207,28 @@ public class TouristRunner {
                 System.out.println("Activity off\nPlease select a activity from the list  ");
                 continue;
             }
-            if (tarihSaat.getHour() > 21.59 && choose == 7) {
+            if (LeptinRunner.tarihSaat.getHour() > 21.59 && choose == 7) {
                 if (gez5.get(choose).getFiyat() <= LeptinRunner.bakiye) {
                     System.out.println("You chose ");
                     System.out.println(gez5.get(choose).getEtkinlik());
-                tarihSaat=  tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0);
-                System.out.println(tarihSaat);
+                    LeptinRunner.tarihSaat=  LeptinRunner.tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0);
+                System.out.println(LeptinRunner.tarihSaat);
                 LeptinRunner.bakiye = LeptinRunner.bakiye - gez5.get(choose).getFiyat();
                 System.out.println(LeptinRunner.bakiye);
 
                 flag = false;
-                break;
+
                 }else System.out.println("YOU DON'T HAVE ENOUGH MONEY");
-            }else if (tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0).getHour() >= 22 ||
-                    tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0).getHour()<=09.59){
+            }else if (LeptinRunner.tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0).getHour() >= 22 ||
+                    LeptinRunner.tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0).getHour()<=09.59){
                 System.out.println("You chose ");
                 System.out.println(gez5.get(choose).getEtkinlik());
-                tarihSaat=  tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0);
-                System.out.println(tarihSaat);
+                LeptinRunner.tarihSaat=  LeptinRunner.tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0);
+                System.out.println(LeptinRunner.tarihSaat);
                 LeptinRunner.bakiye = LeptinRunner.bakiye - gez5.get(choose).getFiyat();
                 System.out.println(LeptinRunner.bakiye);
                 flag = false;
-                break;
+
             }
 
 
@@ -239,8 +239,8 @@ public class TouristRunner {
 
 
                 if (gez5.get(choose).getFiyat() <= LeptinRunner.bakiye) {
-                    tarihSaat=  tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0);
-                    System.out.println(tarihSaat);
+                    LeptinRunner.tarihSaat=  LeptinRunner.tarihSaat.plusHours(gez5.get(choose).getTime()).plusMinutes(0);
+                    System.out.println(LeptinRunner.tarihSaat);
                     LeptinRunner.bakiye = LeptinRunner.bakiye - gez5.get(choose).getFiyat();
                     System.out.println(LeptinRunner.bakiye);
 
