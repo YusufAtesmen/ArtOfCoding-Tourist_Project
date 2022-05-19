@@ -16,11 +16,40 @@ public class HotelRooms {
     public HotelRooms() {
     }
 
-    public HotelRooms(String odaTuru) {
+
+    public HotelRooms(String odaDurum, String odaTuru, int gunlukUcret) {//1 yildiz otel
+        this.odaDurum = odaDurum;
         this.odaTuru = odaTuru;
+        this.gunlukUcret = gunlukUcret;
     }
 
-    public HotelRooms(String odaDurum,String odaTuru, String internet, String tv, String kuvetBanyoJakuzi, String manzara, String yatakOlcut, String minibar, int gunlukUcret) {
+    public HotelRooms(String odaDurum, String odaTuru, String tv, int gunlukUcret) {//2 yildiz otel
+        this.odaDurum = odaDurum;
+        this.odaTuru = odaTuru;
+        this.tv = tv;
+        this.gunlukUcret = gunlukUcret;
+    }
+
+    public HotelRooms(String odaDurum, String odaTuru, String internet, String tv, String yatakOlcut, int gunlukUcret) {//3 yildiz
+        this.odaDurum = odaDurum;
+        this.odaTuru = odaTuru;
+        this.internet = internet;
+        this.tv = tv;
+        this.yatakOlcut = yatakOlcut;
+        this.gunlukUcret = gunlukUcret;
+    }
+
+    public HotelRooms(String odaDurum, String odaTuru, String internet, String tv, String kuvetBanyoJakuzi, String yatakOlcut, int gunlukUcret) {//4 yildiz
+        this.odaDurum = odaDurum;
+        this.odaTuru = odaTuru;
+        this.internet = internet;
+        this.tv = tv;
+        this.kuvetBanyoJakuzi = kuvetBanyoJakuzi;
+        this.yatakOlcut = yatakOlcut;
+        this.gunlukUcret = gunlukUcret;
+    }
+
+    public HotelRooms(String odaDurum, String odaTuru, String internet, String tv, String kuvetBanyoJakuzi, String manzara, String yatakOlcut, String minibar, int gunlukUcret) {
         this.odaDurum = odaDurum;
         this.odaTuru = odaTuru;
         this.internet = internet;

@@ -5,25 +5,17 @@ import welcome.TryCatch;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static hotel.CreateRoom.otel;
 import static hotel.HotelRunner.scan;
 
 public class FiveStarsHotel {
-    static Map<Integer, HotelRooms> otel = new HashMap<>();
+
     static long toplamGun;
     static List<Integer> sifreler = new ArrayList<>(Arrays.asList(0000, 1234, 9876, 6789, 5555));
 
     public static void odasecimi() {
 
-        HotelRooms oda1 = new HotelRooms("bos","tekkisi", "vdsl", "lcd", "jakuzi", "gol manzara", "tekkisilik", "minibar", 750);
-        HotelRooms oda2 = new HotelRooms("bos","ciftkisi", "vdsl", "lcd", "jakuzi", "gol manzara", "tekkisilik", "minibar", 1500);
-        HotelRooms oda3 = new HotelRooms("bos","aile", "vdsl", "lcd", "jakuzi", "gol manzara", "tekkisilik", "minibar", 2500);
-        HotelRooms oda4 = new HotelRooms("bos","suit", "vdsl", "lcd", "jakuzi", "gol manzara", "tekkisilik", "minibar", 3000);
-        HotelRooms oda5 = new HotelRooms("bos","krldairesi", "fiber", "plazma", "jakuzi", "full manzara", "king yatak", "minibar", 5000);
-        otel.put(1, oda1);
-        otel.put(2, oda2);
-        otel.put(3, oda3);
-        otel.put(4, oda4);
-        otel.put(5, oda5);
+
         System.out.println(" odano  odadurum odaturu  internet   tv   banyo  odakonum   yatak    minibar    ucret");
         for (Integer w : otel.keySet()) {
             System.out.println("------------------------------------------------------------------------------");

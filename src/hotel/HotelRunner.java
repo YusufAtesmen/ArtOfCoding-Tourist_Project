@@ -12,7 +12,7 @@ import static tourist_oneDay.TouristRunner.tourist;
 public class HotelRunner extends HotelRooms{
     static long toplamGun;
     static Scanner scan = new Scanner(System.in);
-    static HotelRooms obj = new HotelRooms("kral daiesi");
+    // static HotelRooms obj = new HotelRooms("kral daiesi");
 
     public static void hotel() throws InterruptedException {
         switch (LeptinRunner.choose) {
@@ -97,7 +97,7 @@ public class HotelRunner extends HotelRooms{
 
                 break;
             case 3:
-                tourist();
+                tourist();//yahya beyin class lari cagir
 
                 break;
             case 4:
