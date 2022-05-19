@@ -1,0 +1,13 @@
+5 etkinlik var :
+
+
+1->Cinema
+2->Restaurant
+3->Boğaz Turu
+4->Muze
+5->Hamamı
+
+**      "boğazTur", "Muze" ve "Hamam" -----> bu class'lar "Abstract_Etkinlik" class'ından türetildi.
+        cinema için "CinemaRunner" class'ını, restaurant için RestauranRunner class'ı çağırılacak.
+
+**      yukardaki 5 etkinliğin hepsi birbirlerinden bağımsız çalışıyor. Ayrı ayrı Call edilmeli..
