@@ -15,7 +15,6 @@ public class FiveStarsHotel {
 
     public static void odasecimi() {
 
-
         System.out.println(" odano  odadurum odaturu  internet   tv   banyo  odakonum   yatak    minibar    ucret");
         for (Integer w : otel.keySet()) {
             System.out.println("------------------------------------------------------------------------------");
@@ -115,10 +114,9 @@ public class FiveStarsHotel {
                             System.out.println(e.getMessage());
                         }
                     } else throw new InputMismatchException("son dort hane gircen");
-                    flag = true;
                 } catch (InputMismatchException e) {
                     System.out.println(e.getMessage());
-
+                    flag = true;
                 }
 
             }  while (flag);

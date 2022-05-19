@@ -1,10 +1,13 @@
 package hotel;
 
+import Car.RentalCarRunner;
+import tourist_oneDay.TouristRunner;
 import welcome.LeptinRunner;
 
 import java.util.Scanner;
 
 import static Car.RentalCarRunner.rental;
+import static hotel.CreateRoom.rooms;
 import static hotel.FiveStarsHotel.*;
 import static tourist_oneDay.TouristRunner.tourist;
 
@@ -15,6 +18,7 @@ public class HotelRunner extends HotelRooms{
     // static HotelRooms obj = new HotelRooms("kral daiesi");
 
     public static void hotel() throws InterruptedException {
+        rooms();
         switch (LeptinRunner.choose) {
 
             case 1:
@@ -83,32 +87,18 @@ public class HotelRunner extends HotelRooms{
     private static void otelDisHizmetler() {
         System.out.println("otel hizmetlerimiz ");
         System.out.println("1- arac kiralama\n" +
-                "2- cinema\n" +
-                "3- sehirTuru\n" +
-                "4- restourant ");
+                "2- gezi tur vs" );
         int secim=scan.nextInt();
         switch(secim){
             case 1:
-                rental();
-
+                RentalCarRunner.rental();//yusuf beyin mekana ina gidiyor
                 break;
             case 2:
-                tourist();
-
-                break;
-            case 3:
-                tourist();//yahya beyin class lari cagir
-
-                break;
-            case 4:
-                tourist();
-                break;
-            case 5:
-
+                TouristRunner.tourist();//yahya beyin mekana gidiyor
                 break;
             default:
+                System.out.println("secimi duzgun at");
         }
-
 
     }
 
