@@ -27,6 +27,9 @@ public class TouristRunner {
                 break;
         }
 
+
+
+
     }
 
     private static void ucYildizliOtel() {
