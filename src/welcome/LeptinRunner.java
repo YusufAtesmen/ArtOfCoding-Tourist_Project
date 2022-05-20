@@ -8,7 +8,7 @@ public class LeptinRunner {
     public static int choose;
     public static int bakiye=100000;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
         //System.out.println("WELCOME TO LEPTIN AGENCY");
