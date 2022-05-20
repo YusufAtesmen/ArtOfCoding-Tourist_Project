@@ -1,17 +1,24 @@
 package hotel;
 
+import Car.RentalCarRunner;
+import tourist_oneDay.TouristRunner;
 import welcome.LeptinRunner;
-import welcome.TryCatch;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Scanner;
 
-import static Car.Cars.*;
+import static Car.RentalCarRunner.rental;
+import static hotel.CreateRoom.rooms;
+import static hotel.FiveStarsHotel.*;
+import static tourist_oneDay.TouristRunner.tourist;
 
-public class HotelRunner {
-    static Map<Integer,HotelPojo> otel=new HashMap<>();
 
-    public static void hotel() {
+public class HotelRunner extends HotelRooms{
+    static long toplamGun;
+    static Scanner scan = new Scanner(System.in);
+    // static HotelRooms obj = new HotelRooms("kral daiesi");
+
+    public static void hotel() throws InterruptedException {
+        rooms();
         switch (LeptinRunner.choose) {
 
             case 1:
@@ -20,7 +27,6 @@ public class HotelRunner {
             case 2:
                 ikiYildizliOtel();
                 break;
-
             case 3:
                 ucYildizliOtel();
                 break;
@@ -30,49 +36,119 @@ public class HotelRunner {
             case 5:
                 besYildizliOtel();
                 break;
+
+        }
+
+    }
+
+    private static void besYildizliOtel() throws InterruptedException {
+        System.out.println(LeptinRunner.nameSurName.toUpperCase() +" PELVINAS HOTELE HOSGELDIN \n odalarimiz asagidaki listeden secebilirsiniz");
+
+        System.out.println("1- odasecimi\n" +
+                "2- otelFaturaIslemleri\n" +
+                "3- odemeIslemleri\n" +
+                "4- otelDisHizmetler\n" +
+                "5- cikis");
+        int islem=scan.nextInt();
+        switch(islem){
+            case 1:
+                odasecimi();
+                besYildizliOtel();
+                break;
+            case 2:
+                otelFaturaIslemleri();
+                besYildizliOtel();
+                break;
+            case 3:
+                odemeIslemleri();
+                besYildizliOtel();
+                break;
+            case 4:
+                otelDisHizmetler();
+                besYildizliOtel();
+                break;
+            case 5:
+                cikis();
             default:
-                System.out.println("bos");
+                besYildizliOtel();
+
         }
+    }
+
+    private static void cikis() throws InterruptedException {
+        Thread.sleep(3000);
+        System.out.print("*");
+        Thread.sleep(3000);
+        System.out.print("**");
+        Thread.sleep(3000);
+        System.out.print("***\n gule gule ");
 
     }
-    public static void birYildizliOtel(){
 
-    } public static void ikiYildizliOtel(){
+    private static void otelDisHizmetler() {
+        System.out.println("otel hizmetlerimiz ");
+        System.out.println("1- arac kiralama\n" +
+                "2- disari icin\n" );
+        int secim=scan.nextInt();
+        switch(secim){
+            case 1:
+                RentalCarRunner.rental();
 
-    } public static void ucYildizliOtel(){
+                break;
+            case 2:
+                TouristRunner.tourist();
 
-    } public static void dortYildizliOtel(){
+                break;
 
-    } public static void besYildizliOtel(){
+            default:
+                System.out.println("gecerli gir");
 
-        HotelPojo obj1=new HotelPojo("Televizyon","İnternet","Jakuzi","Bos",100);
-        HotelPojo obj2=new HotelPojo("Televizyon","İnternet","Jakuzi","Bos",150);
-        HotelPojo obj3=new HotelPojo("Televizyon","İnternet","Jakuzi","Bos",400);
-        HotelPojo obj4=new HotelPojo("Televizyon","İnternet","Jakuzi","Bos",300);
-        HotelPojo obj5=new HotelPojo("Televizyon","İnternet","Jakuzi","Bos",200);
-       otel.put(1,obj1);
-       otel.put(2,obj2);
-       otel.put(3,obj3);
-       otel.put(4,obj4);
-       otel.put(5,obj5);
-
-        for (Integer w : otel.keySet()) {
-
-            System.out.printf("%-8d %-15s %-15s %-15s %-15s %-1d\n",w,otel.get(w).getTv(),otel.get(w).getInternet(),
-                    otel.get(w).getJakuzi(),otel.get(w).getOdaBilgi(),otel.get(w).getFiyat());
-        }
-
-        int choose= TryCatch.intGirisi();
-
-        if(otel.containsKey(choose)){
-            otel.get(choose).setOdaBilgi("dolu");
-        }
-        for (Integer w : otel.keySet()) {
-
-            System.out.printf("%-8d %-15s %-15s %-15s %-15s %-1d\n",w,otel.get(w).getTv(),otel.get(w).getInternet(),
-                    otel.get(w).getJakuzi(),otel.get(w).getOdaBilgi(),otel.get(w).getFiyat());
         }
 
 
     }
+
+
+    private static void dortYildizliOtel() {
+    }
+
+    private static void ucYildizliOtel() {
+    }
+
+    private static void ikiYildizliOtel() {
+    }
+
+    private static void birYildizliOtel() {
+        System.out.println("WELLCOME TO CAPSULE HOTEL");
+        System.out.println("hosgeldiniz yapmak istediginiz islem nedir\n" +
+                //ilk classdan alinan ismi buraya getir ismiyle karsilariz musteriyi
+                // "1- rezervasyon tarihleri ilk class dan geitr
+                "1- oda gosterimi\n" +
+                "2- oda rezervasyon\n" +
+                "3- fatura islem \n" +
+                "4- odeme islemleri\n" +
+                "0- cikis");
+        int sec = scan.nextInt();
+        switch (sec) {
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+
+            case 0:
+                break;
+            default:
+        }
+    }
+
+
+
+
+
 }
